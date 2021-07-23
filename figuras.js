@@ -16,7 +16,8 @@ areaTriangulo = (base, altura) => (base * altura) / 2;
 function alturaEquilatero(hipotenusa) {
     const cateto2 = hipotenusa / 2;
     const altura = Math.sqrt ((hipotenusa**2) - (cateto2 ** 2));
-    alert(`Este es un triángulo equilatero con una una altura de ${altura} `);    
+    const area = (hipotenusa * altura) /2;
+    alert(`Es un triángulo equilatero con una altura de ${altura.toFixed(2)}, y su área  es de: ${area.toFixed(2)}`);    
 }
 //calcular isósceles.
 function evaluarIsosceles(lado1, lado2, lado3) {
@@ -28,10 +29,11 @@ function evaluarIsosceles(lado1, lado2, lado3) {
         isoscelesAltura(lado2,lado1);
     }
 }
-function isoscelesAltura (hipotenusa,largo) {
-    const cateto2 = largo / 2;
+function isoscelesAltura (hipotenusa,base) {
+    const cateto2 = base / 2;
     const altura = Math.sqrt ((hipotenusa**2) - (cateto2 ** 2));
-    alert(`Este es un triángulo isósceles con una una altura de ${altura} `);
+    const area = (base * altura) / 2;
+    alert(`Es un triángulo isósceles con una una altura de ${altura.toFixed(2)}, y su área es de : ${area.toFixed(2)}`);
 }
 
 //calcular Escaleno
@@ -58,23 +60,33 @@ function calcularAreaCuadrado() {
 
 //Triangulo
 function calcularPerimetroTriangulo() {
-    const inputTriangulo1 = document.getElementById("inputTriangulo1");
-    const inputTriangulo2 = document.getElementById("inputTriangulo2");
-    const inputBase = document.getElementById("inputBase");
-    const value1 = parseFloat(inputTriangulo1.value);
-    const value2 = parseFloat(inputTriangulo2.value);
-    const valueBase = parseFloat(inputBase.value);
-    const perimetro = perimetroTriangulo(value1, value2, valueBase);
+    const lado1 = document.getElementById("inputLado1");
+    const lado2 = document.getElementById("inputLado2");
+    const lado3 = document.getElementById("inputLado3");
+    const value1 = parseFloat(lado1.value);
+    const value2 = parseFloat(lado2.value);
+    const value3 = parseFloat(lado3.value);
+    const perimetro = perimetroTriangulo(value1, value2, value3);
     alert(perimetro);
 }
-
-function calcularAreaTriangulo() {
-    const inputTrianguloHeight = document.getElementById("inputTrianguloHeight");
-    const inputBase = document.getElementById("inputBase");
-    const valueAltura = parseFloat(inputTrianguloHeight.value);
-    const valueBase = parseFloat(inputBase.value);
-    const area = areaTriangulo(valueBase, valueAltura);
-    alert(area);
+//Determinar si triangulo es isósceles y determinar altura y área .
+function calcularTipoTriangulo() {
+    const lado1 = document.getElementById("inputLado1");
+    const lado2 = document.getElementById("inputLado2");
+    const lado3 = document.getElementById("inputLado3");
+    const triangulo = [parseFloat(lado1.value), parseFloat(lado2.value), parseFloat(lado3.value)];
+   //¿es un triágulo Equilatero?
+    if (triangulo[0] == triangulo[1] && triangulo[0] == triangulo[2]) {
+        console.log("Triangulo Equilatero");
+        alturaEquilatero(triangulo[0]);
+    } 
+    //¿es un triágulo Isósceles?
+        else if (triangulo[0] === triangulo[1] || triangulo[0] === triangulo[2] || triangulo[1] === triangulo[2]) {
+            evaluarIsosceles(triangulo[0], triangulo[1], triangulo[2]);
+    } else {
+        escalenoAltura();
+        //calculo pendiente con la formula de Herón
+    }
 }
 
 //Circulo
@@ -98,63 +110,3 @@ function calcularAreaCirculo() {
     const area = areaCirculo(diametro);
     alert(area);
 }
-
-//Determinar si triangulo es isósceles y determinar area y perimetro
-
-function calcularTipoTriangulo() {
-    const inputLado1 = document.getElementById("inputTriangulo1");
-    const inputLado2 = document.getElementById("inputTriangulo2");
-    const inputLado3 = document.getElementById("inputBase");
-    const triangulo = [parseFloat(inputLado1.value), parseFloat(inputLado2.value), parseFloat(inputLado3.value)];
-   //¿es un triágulo Equilatero?
-    if (triangulo[0] == triangulo[1] && triangulo[0] == triangulo[2]) {
-        console.log("Triangulo Equilatero");
-        alturaEquilatero(triangulo[0]);
-    } 
-    //¿es un triágulo Isósceles?
-        else if (triangulo[0] === triangulo[1] || triangulo[0] === triangulo[2] || triangulo[1] === triangulo[2]) {
-            evaluarIsosceles(triangulo[0], triangulo[1], triangulo[2]);
-    } else {
-        escalenoAltura();
-        //calcular despues con la formula de Herón
-    }
-}
-
-//otras formas de comprobacion
-   /*  const triangulo = [parseFloat(inputLado1), parseFloat(inputLado2), parseFloat(inputLado3)];
-    if (triangulo[0] === triangulo[1]){ 
-        console.log("1 Es un Isoceles");
-    }   else if (triangulo[0] === triangulo[2]) {
-        console.log("2 Es un Isoceles");
-    }   else if (triangulo[1] === triangulo[2]){
-        console.log("3 Es un Isoceles");
-    }   else {
-        console.log("No es un triangulo Isoceles");
-    }
-
-    //segunda forma
-    if (triangulo[0] === triangulo[1] || triangulo[0] === triangulo[2] || triangulo[1] === triangulo[2]) {
-        console.log("1 Es un Isoceles");
-    } else {
-        console.log("No es un triangulo Isoceles");
-    }
-    
-    //tercera forma
-    (triangulo[0] === triangulo[1] || triangulo[0] === triangulo[2] || triangulo[1] === triangulo[2]) ? isoscelesAltura(triangulo[0], triangulo[1], triangulo[2]) : escalenoAltura(); */
-
-
-    
-    
-    /* if (triangulo[0] === triangulo[1]) { 
-        console.log("1 Es un Isoceles");
-        isoscelesAltura(triangulo[0], triangulo[1], triangulo[2]);
-    }   else if (triangulo[0] === triangulo[2]) {
-        console.log("2 Es un Isoceles");
-        isoscelesAltura(triangulo[0], triangulo[2], triangulo[1]);
-    }   else if (triangulo[1] === triangulo[2]){
-        console.log("3 Es un Isoceles");
-        isoscelesAltura(triangulo[1], triangulo[2], triangulo[0]);
-    }   else {
-        console.log("No es un triangulo Isoceles");
-        escalenoAltura();
-    } */

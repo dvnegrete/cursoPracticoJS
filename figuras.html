@@ -27,16 +27,13 @@
             <h2>Triángulo</h2>
             <h3>Calcula el área y perimetro</h3>
             <form action="" class="calculadoras__form">
-                <label for="inputCuadrado">Proporciona información sobre algunas medidas del triangulo.</label>
-                <input type="number" id="inputTriangulo1" placeholder="Lado 1">
-                <input type="number" id="inputTriangulo2" placeholder="Lado 2">
-                <input type="number" id="inputBase" placeholder="Base">
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularPerimetroTriangulo()">Calcular el perimetro</button>
-                <p>Para calcular su área indica solamente su base y altura</p>
-                <input type="number" id="inputTrianguloHeight" placeholder="Altura">                
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularAreaTriangulo()">Calcular el área</button>
-                <p>Para saber que tipo de triangulo es y su altura es indica la medida cada uno de sus lados</p>
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularTipoTriangulo()">Tipo de triangulo y altura</button>
+                <label for="inputCuadrado">Escribe cuanto mide cada uno de los lados.</label>
+                <input type="number" id="inputLado1" placeholder="Lado 1">
+                <input type="number" id="inputLado2" placeholder="Lado 2">
+                <input type="number" id="inputLado3"placeholder="Lado 3">
+                <button type="button" class="calculadoras__form--buttons" onclick="calcularPerimetroTriangulo()">Calcular el perimetro</button>                
+                <!-- <button type="button" class="calculadoras__form--buttons" onclick="calcularAreaTriangulo()">Calcular el área</button> -->
+                <button type="button" class="calculadoras__form--buttons" onclick="calcularTipoTriangulo()">Calcular Altura y Área</button>
             </form>
         </section>
         <section class="calculadoras">
