@@ -1,8 +1,17 @@
 const coupons = [
-    "JuanDC",
-    "damian",
-    "tienda",
-];
+    {
+        name : "JuanDC",
+        discount : 15,
+    },
+    {
+        name : "damian",
+        discount : 30,    
+    },
+    {
+        name : "tienda",
+        discount : 25,
+    },
+]
 
 function calcularPrecioConDescuento (precio, descuento){
     const porcentajePrecioDescuento = 100 - descuento;
@@ -13,39 +22,26 @@ function calcularPrecioConDescuento (precio, descuento){
 function onClickButtonPriceDiscount() {
     const inputPrice = document.getElementById("InputPrice");
     const priceValue = inputPrice.value;
-
-    //const inputDiscount = document.getElementById("InputDiscount");
-    //const discountValue = inputDiscount.value;
-
     const inputCoupon = document.getElementById("InputCoupon");
     const couponValue = inputCoupon.value;
 
-    let descuento;
-
-    switch(couponValue) {
-      case "JuanDC":
-        descuento = 15;
-      break;
-      case "damian":
-        descuento = 30;
-      break;
-      case "tienda":
-        descuento = 25;
-      break;
-      default:
-        descuento = 0;
-    }
-
-    if (descuento === 0) {
-        const resultP = document.getElementById("ResultP");
-        resultP.innerHTML = `Este cupón no es valido. Verificalo por favor.`;
-
-    } else {
-        const precioConDescuento = calcularPrecioConDescuento(priceValue,descuento);
-        const resultP = document.getElementById("ResultP");
-        resultP.innerHTML = `Tienes un descuento de ${descuento}%. <br> Precio con descuento incluido: <b>$${precioConDescuento.toFixed(2)}<b/>`;
+    const isCuponValueValid = function (coupon){
+        return coupon.name === couponValue;
     }
     
+    const userCoupon = coupons.find(isCuponValueValid);
+
+    if (!userCoupon) {        
+        const resultP = document.getElementById("ResultP");
+        resultP.innerHTML = `El cupón ${couponValue} no es valido. Verificalo por favor.`;
+        alert(`El Cupón ${couponValue} no es valido`);
+    } else {
+        const descuento = userCoupon.discount;    
+        const precioConDescuento = calcularPrecioConDescuento(priceValue,descuento);
+        const resultP = document.getElementById("ResultP");
+        resultP.innerHTML = `Tienes un descuento de ${descuento}%. <br> Precio con descuento incluido: <b>$${precioConDescuento.toFixed(2)}<b/>`;    
+    }    
+
     
     //Proyecto. Dar formato separador de miles a resultP
 
