@@ -1,31 +1,48 @@
+:root {
+    --colorPrincipal: #ffde2a;
+
+    --colorGradient2: #94cf4d;
+    --colorGradient3: #2db373;
+    --colorGradient4: #009186;
+    --colorGradient5: #006c7c;
+    --colorGradient6: #2f4858;
+    
+    --colorPalette2: #b8a771;
+    --colorPalette3: #fef0ca;
+    --colorPalette4: #005246;
+}
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 html {
     font-size: 62.5%;
+    font-family: sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: var(--colorPrincipal);
 }
 .header {
     width: 100vw;
-    height: 17rem;
-    background-color: #2C5364;
+    height: 10rem;
+    background-color: var(--colorGradient2);
     display: inherit;
     flex-direction: column;
     align-items: center;
     font-size: 2.5rem;
-    color: gray;
+    color: var(--colorPalette4);
+    
 }
 
 .main {
-    background: linear-gradient(#2C5364, #203A43);
+    background: linear-gradient(var(--colorGradient2), var(--colorGradient3));
     min-height: calc(100vh - 22rem);
     font-size: 1.6rem;
     display: inherit;
@@ -35,8 +52,8 @@ body {
 }
 
 .calculadoras {
-    background: linear-gradient(#3a7bd5,#3a6073);
-    color: white;
+    background: linear-gradient(var(--colorGradient6), var(--colorGradient5));
+    color: var(--colorPrincipal);
     border-radius: 70px;
     height: 40rem;
     width: 42rem;
@@ -59,7 +76,7 @@ body {
 }
 
 .calculadoras__form input {
-    background: #8e9eab;
+    background: var(--colorPalette2);
     height: 3rem;
     margin: 1rem;
     border-radius: 20px;
@@ -69,15 +86,69 @@ body {
 
 .calculadoras__form--buttons {
     border-radius: 50px;
-    background: #659999;
+    background: var(--colorPalette4);
     color: white;
     margin: 0.5rem;
     height: 3.5rem;
     border: none;
 }
 
+.main__form {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 var(--colorPalette4);
+    backdrop-filter: blur(13.0px);
+    -webkit-backdrop-filter: blur( 13.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 34rem;
+    height: auto;
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__form--label {
+    font-size: 1.6rem;
+    display: inherit;
+    justify-content: center;
+    color: var(--colorGradient6);
+    margin-bottom: 1rem;
+
+}
+
+.main__form--input {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    height: 2.5rem;    
+    text-align: center;
+    background: rgba( 255, 255, 255, 0.7 );
+}
+
+.main__form--button {
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: 1rem 0;
+    height: 3rem;
+    background: var(--colorPalette4);
+    color: white;
+}
+
+.resultado {
+    margin-top: 1rem;
+    min-height: 6rem;
+    padding: 2rem 1rem;   
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background-color: var(--colorGradient5);
+}
+
 
 .footer {
-    background-color: #0F2027;
+    background-color: var(--colorGradient3);
     height: 5rem;
+    width: 100vw;
 }

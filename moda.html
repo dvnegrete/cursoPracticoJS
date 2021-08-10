@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/moda.css">
     <title>Moda</title>
 </head>
 <body>
-    <header>
-    <h1>Moda</h1>
+    <header class="header">
+        <h1>Moda</h1>
     </header>
-    <section class="moda">
-        <h2>Calcula la moda de una lista de números</h2>
-        <form action="" class="moda__form">
-            <label for="dateArray" class="main__form--label">Ingresa un valor de la lista a Calcular</label>
-            <input type="number" id="dateArray" class="moda__form--input"/>
-            <button class="main__form--button" type="button" onclick="capturarDatoArray()">
-                Capturar
-            </button>
-            <p id="creacionDeLista" class="resultado"></p>
-            <p>Cuando captures todos los valores de la lista calcula la Moda</p>
-            <button class="main__form--button" type="button" onclick="onClickButtonNumberDatos()">
-                Calcular Moda
-            </button> 
-            <div id="ResultP" class="resultado"></div>
-        </form>
-    </section>
-    
+    <main class="main">
+        <section class="moda">
+            <h2>Calcula la moda de una lista de números</h2>
+            <form action="" class="moda__form main__form">
+                <label for="dateArray" class="main__form--label">Ingresa un valor de la lista a Calcular</label>
+                <input type="number" id="dateArray" class="main__form--input moda__form--input"/>
+                <button class="main__form--button" type="button" onclick="capturarDatoArray()">
+                    Capturar
+                </button>                
+                <div id="creacionDeLista" class="resultado">
+                    <p>Estos son los numeros de tu lista:</p>
+                    <ul id="capturaListaUL" class="captura"></ul>
+                </div>                
+                <button class="main__form--button" type="button" onclick="onClickButtonNumberDatos()">
+                    Calcular Moda
+                </button>
+                <div id="ResultP" class="resultado"></div>
+                <button class="main__form--button" type="button" onclick="javascript:window.location.reload();">
+                    Reiniciar Cálculo
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+
+    </footer>    
 </body>
 <script src="./moda.js"></script>
 </html>

@@ -11,13 +11,9 @@ html {
 .header {
     width: 100vw;
     height: 10rem;
-    background-color: #30cfd0;
-    text-align: center;
-    font-size: 1.5rem;
 }
 
 .main {
-    background-image: linear-gradient(to top, #330867 0%, #30cfd0 100%);
     width: 100vw;
     min-height: calc(100vh - 15rem);
     display: flex;
@@ -32,61 +28,10 @@ html {
     text-align: center;
 }
 
-.main__form {
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur(13.0px);
-    -webkit-backdrop-filter: blur( 13.0px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    width: 34rem;
-    height: auto;
-    padding: 1.5rem;
-    margin: 1rem;
+.footer {
     display: flex;
     flex-direction: column;
-}
-
-.main__form--label {
-    font-size: 1.6rem;
-    display: inherit;
-    justify-content: center;
-    color: rgba( 255, 255, 255, 0.7 );
-    margin-bottom: 1rem;
-
-}
-
-.main__form--input {
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    height: 2.5rem;
-    text-align: center;
-    background: rgba( 255, 255, 255, 0.7 );
-}
-
-.main__form--button {
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    margin: 1rem 0;
-    height: 3rem;
-    background: rgba( 255, 255, 255, 0.7 );
-}
-
-.resultado {
-    margin-top: 1rem;
-    min-height: 6rem;
-    padding: 2rem 1rem;
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    background-color: #330867;
-}
-
-.footer {
-    width: 100vw;
-    height: 5rem;
-    background-color: #330867;
+    align-items: flex-end;
+    font-size: 1.1rem;
+    padding-right: 5rem;
 }

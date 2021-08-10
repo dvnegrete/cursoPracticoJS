@@ -22,6 +22,7 @@ function moda (lista) {
         }
     );
     //listaArray
+    
     resultModa = listaArray[listaArray.length -1]; 
     console.log(`La moda de la lista es el número: ${resultModa[0]}, con : ${resultModa[1]} veces repitiendose en la lista`);
     return resultModa;
@@ -32,20 +33,23 @@ let listCaptureHTML = [];
 function crearArray (valor) {
     return listCaptureHTML.push(valor);
 }
+
+let listaUL = document.getElementById("capturaListaUL");
+
 //conexion con HTML
 function onClickButtonNumberDatos() {
     moda(listCaptureHTML);
     const resultP = document.getElementById("ResultP");
-    resultP.innerHTML =`La moda de la lista es el número: ${resultModa[0]}, que se aparece: ${resultModa[1]} veces en la lista de números`;
-    //falta definir como reinicriar contador despues de calcular moda. hasta ahorita solo lo logre igualando a cero los resultados.
-    listCaptureHTML = 0;
-    resultModa = 0;
+    resultP.innerHTML =`La moda es: ${resultModa[0]}. <br> Se repite ${resultModa[1]} veces.`;    
+    listaUL.style.color = "#b8a771";
 }
+
 //HTML. capturar dato por dato
 function capturarDatoArray() {
     let inputCapture = document.getElementById("dateArray");
-    let numberCapture =inputCapture.value;
-    crearArray(numberCapture);
-    let creacionDeLista = document.getElementById("creacionDeLista");
-    creacionDeLista.innerHTML =`Esta es la lista capturada: ${listCaptureHTML}`;    
+    let numberCapture =inputCapture.value;    
+    crearArray(numberCapture);        
+    let etiquetaLI = document.createElement("li");
+    listaUL.appendChild(etiquetaLI);
+    etiquetaLI.innerText =`${numberCapture}`;
 }

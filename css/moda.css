@@ -1,0 +1,22 @@
+.moda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__form--button + div {
+    margin-bottom: 2rem;
+}
+
+.captura {    
+    height: auto;
+    width: 28rem;
+    list-style: none;
+}
+
+.captura > li {
+   display: inline-flex;
+   margin: 0 5px;
+}
+

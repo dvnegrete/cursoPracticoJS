@@ -26,7 +26,7 @@ const listaOrdenada = lista1.sort(function(a,b){
 const mitadLista =  parseInt(lista1.length / 2);
 
 function esPar (numerito) {
-    //modulo de residuo. si hay residuo de la divion, quiere decir que es impar.
+    // % modulo de residuo. si hay residuo de la divion, quiere decir que es impar.
     if (numerito % 2 === 0) {
         return true;
     } else {
