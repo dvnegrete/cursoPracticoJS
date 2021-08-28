@@ -35,6 +35,29 @@ function crearArray (valor) {
 }
 
 let listaUL = document.getElementById("capturaListaUL");
+let inputCapture = document.getElementById("dateArray");
+
+//HTML. capturar dato por dato
+const capturarDatoArray = function() {
+    let numberCapture = inputCapture.value;
+    crearArray(numberCapture);        
+    let etiquetaLI = document.createElement("li");
+    listaUL.appendChild(etiquetaLI);
+    etiquetaLI.innerText =`${numberCapture}`;
+}
+
+const comprobarEnter =  (key) => {   
+    console.log("Numero de tecla " + key.keyCode);
+    let teclaCode = parseInt(key.keyCode);    
+    if (teclaCode === 13 ){        
+        capturarDatoArray();
+        debugger;
+    }    
+}
+
+//Habilitar captura con el tecla Enter. Hay un error al final de la ejecucion
+//inputCapture.addEventListener("keypress", comprobarEnter);
+
 
 //conexion con HTML
 function onClickButtonNumberDatos() {
@@ -42,14 +65,4 @@ function onClickButtonNumberDatos() {
     const resultP = document.getElementById("ResultP");
     resultP.innerHTML =`La moda es: ${resultModa[0]}. <br> Se repite ${resultModa[1]} veces.`;    
     listaUL.style.color = "#b8a771";
-}
-
-//HTML. capturar dato por dato
-function capturarDatoArray() {
-    let inputCapture = document.getElementById("dateArray");
-    let numberCapture =inputCapture.value;    
-    crearArray(numberCapture);        
-    let etiquetaLI = document.createElement("li");
-    listaUL.appendChild(etiquetaLI);
-    etiquetaLI.innerText =`${numberCapture}`;
 }

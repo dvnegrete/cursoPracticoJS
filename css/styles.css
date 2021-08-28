@@ -75,7 +75,16 @@ body {
     flex-direction: column;
 }
 
-.calculadoras__form input {
+.calculadoras__form--change {
+    padding: 0 3rem;    
+    width: 100%;
+    height: calc(40rem -15rem);    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.calculadoras__form--input {
     background: var(--colorPalette2);
     height: 3rem;
     margin: 1rem;
@@ -92,6 +101,15 @@ body {
     height: 3.5rem;
     border: none;
 }
+
+.resultFigurasDiv {
+    color: white;
+    padding: 1rem 5rem;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+
 
 .main__form {
     background: rgba( 255, 255, 255, 0.25 );

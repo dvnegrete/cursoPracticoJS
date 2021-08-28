@@ -15,35 +15,31 @@
         <section class="calculadoras">
             <h2>Cuadrado</h2>
             <h3>Calcula el área y perimetro</h3>
-            <form action="" class="calculadoras__form">
+            <form action="" class="calculadoras__form" id="cuadrado">
                 <label for="inputCuadrado">Escribe cuanto mide cada lado de tu cuadrado</label>
-                <input type="number" id="inputCuadrado">
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularPerimetroCuadrado()">Calcular el perimetro</button>
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularAreaCuadrado()">Calcular el área</button>
+                <input type="number" id="inputCuadrado" class="calculadoras__form--input">
+                <button type="button" class="calculadoras__form--buttons" onclick="calcularCuadrado()">Calcular </button>
             </form>
         </section>
         <section class="calculadoras">
             <h2>Triángulo</h2>
             <h3>Calcula el área y perimetro</h3>
-            <form action="" class="calculadoras__form">
+            <form action="" class="calculadoras__form" id="triangulo">
                 <label for="inputCuadrado">Escribe cuanto mide cada uno de los lados.</label>
-                <input type="number" id="inputLado1" placeholder="Lado 1">
-                <input type="number" id="inputLado2" placeholder="Lado 2">
-                <input type="number" id="inputLado3"placeholder="Lado 3">
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularPerimetroTriangulo()">Calcular el perimetro</button>                
-                <!-- <button type="button" class="calculadoras__form--buttons" onclick="calcularAreaTriangulo()">Calcular el área</button> -->
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularTipoTriangulo()">Calcular Altura y Área</button>
+                <input type="number" class="calculadoras__form--input" id="inputLado1" placeholder="Lado 1">
+                <input type="number" class="calculadoras__form--input" id="inputLado2" placeholder="Lado 2">
+                <input type="number" class="calculadoras__form--input" id="inputLado3"placeholder="Lado 3">
+                <button type="button" class="calculadoras__form--buttons" onclick="calcularTriangulo()">Calcular</button>                
             </form>
         </section>
         <section class="calculadoras">
             <h2>Círculo</h2>
-            <h3>Calcula el diametro, área y perimetro</h3>
-            <form action="" class="calculadoras__form">
+            <h3>Calcula el área y perimetro</h3>
+            <form action="" class="calculadoras__form" id="circulo">
                 <label for="inputCuadrado">Escribe cuanto mide el radio del círculo</label>
-                <input type="number" id="inputRadio" placeholder="Radio">
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularDiametroCirculo()">Calcular el diametro</button>
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularPerimetroCirculo()">Calcular el perimetro</button>
-                <button type="button" class="calculadoras__form--buttons" onclick="calcularAreaCirculo()">Calcular el área</button>
+                <input type="number" class="calculadoras__form--input" id="inputRadio" placeholder="Radio">
+                <button type="button" class="calculadoras__form--buttons" onclick="calcularCirculo()">CALCULAR</button>
+                
             </form>
         </section>
     </main>
