@@ -21,8 +21,8 @@ function moda (lista) {
             return elementoA[1] - elementoB[1];
         }
     );
-    //listaArray
     
+    //listaArray
     resultModa = listaArray[listaArray.length -1]; 
     console.log(`La moda de la lista es el número: ${resultModa[0]}, con : ${resultModa[1]} veces repitiendose en la lista`);
     return resultModa;
@@ -34,8 +34,11 @@ function crearArray (valor) {
     return listCaptureHTML.push(valor);
 }
 
-let listaUL = document.getElementById("capturaListaUL");
-let inputCapture = document.getElementById("dateArray");
+const listaUL = document.getElementById("capturaListaUL");
+const inputCapture = document.getElementById("dateArray");
+const buttonCapture = document.getElementById("buttonCapture");
+const buttonResult = document.getElementById("buttonResult");
+
 
 //HTML. capturar dato por dato
 const capturarDatoArray = function() {
@@ -46,23 +49,33 @@ const capturarDatoArray = function() {
     etiquetaLI.innerText =`${numberCapture}`;
 }
 
-const comprobarEnter =  (key) => {   
-    console.log("Numero de tecla " + key.keyCode);
-    let teclaCode = parseInt(key.keyCode);    
+let inputDate;
+const comprobarEnter = (key) => {  
+    const teclaCode = parseInt(key.keyCode);    
     if (teclaCode === 13 ){        
         capturarDatoArray();
-        debugger;
+        inputDate = undefined;
+        inputCapture.value = "";
+    } else if  (inputDate > 0) {
+        inputDate += key.key;
+        inputCapture.value = inputDate;
+    } else {
+        inputDate = key.key;
+        inputCapture.value = inputDate;
     }    
+    key.stopPropagation();
 }
 
-//Habilitar captura con el tecla Enter. Hay un error al final de la ejecucion
-//inputCapture.addEventListener("keypress", comprobarEnter);
-
-
 //conexion con HTML
-function onClickButtonNumberDatos() {
+const calcularModa = function() {
     moda(listCaptureHTML);
     const resultP = document.getElementById("ResultP");
     resultP.innerHTML =`La moda es: ${resultModa[0]}. <br> Se repite ${resultModa[1]} veces.`;    
     listaUL.style.color = "#b8a771";
 }
+
+//Habilitar captura con el tecla Enter. Hay un error al final de la ejecucion
+inputCapture.addEventListener("keydown", comprobarEnter);
+buttonCapture.addEventListener("click", capturarDatoArray);
+buttonResult.addEventListener("click", calcularModa)
+

@@ -18,14 +18,14 @@
                 <!-- Aun en pruebas capturar con ENTER de TECLADO -->
                 <label for="dateArray" class="main__form--label">Ingresa un valor de la lista a Calcular</label>
                 <input type="number" id="dateArray" class="main__form--input moda__form--input"/>
-                <button class="main__form--button" type="button" onclick="capturarDatoArray()">
+                <button class="main__form--button" type="button" id="buttonCapture">
                     Capturar
                 </button>                
                 <div id="creacionDeLista" class="resultado">
                     <p>Estos son los numeros de tu lista:</p>
                     <ul id="capturaListaUL" class="captura"></ul>
                 </div>                
-                <button class="main__form--button" type="button" onclick="onClickButtonNumberDatos()">
+                <button class="main__form--button" type="button" id="buttonResult">
                     Calcular Moda
                 </button>
                 <div id="ResultP" class="resultado"></div>
