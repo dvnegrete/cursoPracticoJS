@@ -28,17 +28,34 @@ body {
     flex-direction: column;
     min-height: 100vh;
     color: var(--colorPrincipal);
+    background: linear-gradient(var(--colorGradient2), var(--colorGradient3));
 }
+
+a {
+    text-decoration: none;
+    color: var(--colorPrincipal);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--colorGradient6);
+    cursor: pointer;
+}
+
+a:visited {    
+    color: var(--colorPrincipal)
+}
+
 .header {
     width: 100vw;
-    height: 10rem;
+    min-height: 10rem;
     background-color: var(--colorGradient2);
     display: inherit;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-size: 2.5rem;
-    color: var(--colorPalette4);
-    
+    color: var(--colorPalette4);    
 }
 
 .main {

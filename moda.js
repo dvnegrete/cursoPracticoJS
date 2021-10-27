@@ -46,24 +46,29 @@ const capturarDatoArray = function() {
     crearArray(numberCapture);        
     let etiquetaLI = document.createElement("li");
     listaUL.appendChild(etiquetaLI);
-    etiquetaLI.innerText =`${numberCapture}`;
+    etiquetaLI.innerText =`${numberCapture}`;    
 }
 
 let inputDate;
-const comprobarEnter = (key) => {  
-    const teclaCode = parseInt(key.keyCode);    
-    if (teclaCode === 13 ){        
-        capturarDatoArray();
-        inputDate = undefined;
-        inputCapture.value = "";
-    } else if  (inputDate > 0) {
-        inputDate += key.key;
-        inputCapture.value = inputDate;
-    } else {
-        inputDate = key.key;
-        inputCapture.value = inputDate;
-    }    
-    key.stopPropagation();
+const comprobarEnter = (key) => {    
+    debugger
+    const teclaCode = parseInt(key.keyCode);
+        if (teclaCode === 13 ) {        
+            console.log(inputCapture.value);
+            
+            capturarDatoArray();
+        // inputDate = undefined;
+        // inputCapture.value = "";
+        }
+    // else if  (inputDate > 0) {
+    //     inputDate += key.key;
+    //     inputCapture.value = inputDate;
+    // } else {
+    //     inputDate = key.key;
+    //     inputCapture.value = inputDate;
+    // }    
+    key.stopPropagation()
+    // });
 }
 
 //conexion con HTML
@@ -75,7 +80,7 @@ const calcularModa = function() {
 }
 
 //Habilitar captura con el tecla Enter. Hay un error al final de la ejecucion
-inputCapture.addEventListener("keydown", comprobarEnter);
-buttonCapture.addEventListener("click", capturarDatoArray);
-buttonResult.addEventListener("click", calcularModa)
 
+buttonCapture.addEventListener("click", capturarDatoArray);
+buttonResult.addEventListener("click", calcularModa);
+inputCapture.addEventListener("keypress", comprobarEnter);
